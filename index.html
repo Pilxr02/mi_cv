@@ -1,119 +1,136 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CV - Milagros Pilar Lozano Villena</title>
-  <!-- Enlace a la hoja compilada final de la Semana 6 -->
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Milagros Pilar Lozano Villena</title>
+
+    <!-- 1. Enlazamos tu archivo de estilos .less directamente -->
+    <link rel="stylesheet/less" type="text/css" href="style.less" />
+
+    <!-- 2. Cargamos la librería oficial LESS CDN (Semana 6) para compilar en vivo -->
+    <script src="https://cdn.jsdelivr.net/npm/less"></script>
 </head>
+
 <body>
 
-  <div class="cv-container">
-    
-    <!-- ENCABEZADO (Flexbox para distribución de perfil) -->
-    <header class="cv-header">
-      <div class="header-info">
-        <h1>Milagros Pilar Lozano Villena</h1>
-        <h2>Systems Engineering Student | 6to Ciclo | Décimo Superior</h2>
-        <p class="perfil-extracto">
-          Estudiante de Ingeniería de Sistemas e Informática en la Universidad Tecnológica del Perú (UTP), cursando el quinto ciclo. Apasionada por la tecnología y su capacidad para generar soluciones con impacto real en la sociedad. Enfocada en desarrollo web, seguridad de datos y liderazgo ético.
-        </p>
-      </div>
-      <div class="header-contacto">
-        <button class="btn-contacto">Contactar</button>
-      </div>
-    </header>
+    <div class="cv-container">
 
-    <!-- CUERPO PRINCIPAL (CSS Grid Bidimensional 2D de la Semana 3) -->
-    <div class="cv-grid">
-      
-      <!-- COLUMNA IZQUIERDA (Aside) -->
-      <aside class="col-izquierda">
-        
-        <section class="seccion-aside">
-          <h3>Aptitudes</h3>
-          <ul class="lista-aptitudes">
-            <li><strong>HTML and CSS:</strong> Sitio Web (Intermedio)</li>
-            <li><strong>Lenguajes:</strong> Java, C++ (Intermedio), Python</li>
-            <li><strong>Bases de Datos:</strong> SQL (Básico), Database 1 Leader</li>
-            <li><strong>Herramientas:</strong> Excel (Intermedio)</li>
-          </ul>
-        </section>
-
-        <section class="seccion-aside">
-          <h3>Habilidades Blandas</h3>
-          <ul class="lista-blandas">
-            <li>Liderazgo multidisciplinario</li>
-            <li>Pensamiento crítico y analítico</li>
-            <li>Escucha activa y empatía</li>
-            <li>Comunicación efectiva</li>
-            <li>Aprendizaje autónomo y adaptabilidad</li>
-          </ul>
-        </section>
-
-        <section class="seccion-aside">
-          <h3>Voluntariado</h3>
-          <div class="item-voluntariado">
-            <h4>Estudiante Voluntario de Comunidad</h4>
-            <h5>Congreso de la República del Perú</h5>
-            <p>Servicios sociales y medio ambiente.</p>
-          </div>
-        </section>
-
-      </aside>
-
-      <!-- COLUMNA DERECHA (Main Content) -->
-      <main class="col-derecha">
-        
-        <section class="seccion-main">
-          <h3>Proyectos Tecnológicos</h3>
-          
-          <div class="item-proyecto">
-            <h4>Plataforma Web Textil — Proyecto Universitario</h4>
-            <p>Diseño y desarrollo de una solución web para una microempresa del sector textil, optimizando significativamente su presencia digital y eficiencia operativa.</p>
-          </div>
-
-          <div class="item-proyecto">
-            <h4>Solución Tecnológica Real — Bachillerato Internacional (IB)</h4>
-            <p>Diseño y desarrollo de una solución de software aplicada a un caso real en una frutería local, dentro de la asignatura TIGS (Tecnología de la Información en una Sociedad Global). Logro obtenido: **Banda 6** y Diploma IB.</p>
-          </div>
-        </section>
-
-        <section class="seccion-main">
-          <h3>Certificaciones Oficiales</h3>
-          <!-- Subgrid de tarjetas (Semana 3) -->
-          <div class="certificaciones-subgrid">
-            
-            <div class="tarjeta-cert">
-              <h4>Cybersecurity Essentials</h4>
-              <h5>Cisco Networking Academy</h5>
-              <p class="vigencia">Expedición: Oct 2023 · Vence: Nov 2025</p>
+        <!-- Encabezado Principal -->
+        <header class="cv-header">
+            <div class="header-info">
+                <h1>Milagros Pilar Lozano Villena</h1>
+                <h2>Systems Engineering Student | 6to Ciclo | Décimo Superior</h2>
+                <p class="perfil-extracto">
+                    Estudiante de Ingeniería de Sistemas e Informática en la Universidad Tecnológica del Perú (UTP),
+                    cursando el sexto ciclo. Apasionada por la tecnología y su capacidad para generar soluciones con
+                    impacto real en la sociedad. Enfocada en desarrollo web, seguridad de datos y liderazgo ético.
+                </p>
             </div>
-
-            <div class="tarjeta-cert">
-              <h4>Introducción a las Redes</h4>
-              <h5>Cisco Networking Academy</h5>
+            <div class="header-contacto">
+                <a href="https://www.linkedin.com/in/milagros-pilar-lozano-villena-b314aa360?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+                    target="_blank" class="link-boton">
+                    <button class="btn-contacto">Contactar</button>
+                </a>
             </div>
+        </header>
 
-            <div class="tarjeta-cert">
-              <h4>Intro a la Ciberseguridad</h4>
-              <h5>Cisco Networking Academy</h5>
-            </div>
+        <!-- Cuerpo del Currículum (Grid) -->
+        <div class="cv-grid">
 
-            <div class="tarjeta-cert">
-              <h4>Experiencia de Laboratorio</h4>
-              <h5>Chemistry Laboratory (IB)</h5>
-            </div>
+            <!-- Columna Izquierda (Aside) -->
+            <aside class="col-izquierda">
 
-          </div>
-        </section>
+                <section class="seccion-aside">
+                    <h3>Aptitudes</h3>
+                    <ul class="lista-aptitudes">
+                        <li><strong>HTML and CSS:</strong> Sitio Web (Intermedio)</li>
+                        <li><strong>Lenguajes:</strong> Java, C++ (Básico), Python</li>
+                        <li><strong>Bases de Datos:</strong> SQL (Básico)</li>
+                        <li><strong>Herramientas:</strong> Excel (Intermedio)</li>
+                    </ul>
+                </section>
 
-      </main>
+                <section class="seccion-aside">
+                    <h3>Habilidades Blandas</h3>
+                    <ul class="lista-blandas">
+                        <li>Liderazgo multidisciplinario</li>
+                        <li>Pensamiento crítico y analítico</li>
+                        <li>Escucha activa y empatía</li>
+                        <li>Comunicación efectiva</li>
+                        <li>Aprendizaje autónomo y adaptabilidad</li>
+                    </ul>
+                </section>
 
-    </div> <!-- Fin del grid -->
+                <section class="seccion-aside">
+                    <h3>Voluntariado</h3>
+                    <div class="item-voluntariado">
+                        <h4>Estudiante Voluntario de Comunidad</h4>
+                        <h5>Congreso de la República del Perú</h5>
+                        <p>Servicios sociales y medio ambiente.</p>
+                    </div>
+                </section>
 
-  </div> <!-- Fin del contenedor -->
+            </aside>
+
+            <!-- Columna Derecha (Main) -->
+            <main class="col-derecha">
+
+                <section class="seccion-main">
+                    <h3>Proyectos Tecnológicos</h3>
+
+                    <div class="item-proyecto">
+                        <h4>Plataforma Web Textil — Proyecto Universitario</h4>
+                        <p>Diseño y desarrollo de una solución web para una microempresa del sector textil, optimizando
+                            significativamente su presencia digital y eficiencia operativa.</p>
+                    </div>
+
+                    <div class="item-proyecto">
+                        <h4>Solución Tecnológica Real — Bachillerato Internacional (IB)</h4>
+                        <p>Diseño y desarrollo de una solución de software aplicada a un caso real en una frutería
+                            local, dentro de la asignatura TIGS (Tecnología de la Información en una Sociedad Global).
+                            Logro obtenido: Banda 6 y Diploma IB.</p>
+                    </div>
+                </section>
+
+                <section class="seccion-main">
+                    <h3>Certificaciones Oficiales</h3>
+                    <div class="certificaciones-subgrid">
+
+                        <!-- Enlace Certificado 1 -->
+                        <a href="cert-cybersecurity.html" target="_blank" class="tarjeta-cert">
+                            <h4>Cybersecurity Essentials</h4>
+                            <h5>Cisco Networking Academy</h5>
+                        </a>
+
+                        <!-- Enlace Certificado 2 -->
+                        <a href="cert-redes.html" target="_blank" class="tarjeta-cert">
+                            <h4>Introducción a las Redes</h4>
+                            <h5>Cisco Networking Academy</h5>
+                        </a>
+
+                        <!-- Enlace Certificado 3 -->
+                        <a href="cert-intro-cyber.html" target="_blank" class="tarjeta-cert">
+                            <h4>Intro a la Ciberseguridad</h4>
+                            <h5>Cisco Networking Academy</h5>
+                        </a>
+
+                        <!-- Enlace Certificado 4 -->
+                        <a href="#" target="_blank" class="tarjeta-cert">
+                            <h4>Experiencia de Laboratorio</h4>
+                            <h5>Chemistry Laboratory (IB)</h5>
+                        </a>
+
+                    </div>
+                </section>
+
+            </main>
+
+        </div>
+
+    </div>
 
 </body>
+
 </html>
