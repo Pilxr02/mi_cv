@@ -1,0 +1,191 @@
+// 1. DECLARACIÓN DE VARIABLES GLOBALES (Semana 5 y 6)
+@color-primario: #1b365d;   // Azul Corporativo / STEM elegante
+@color-secundario: #4b6b94; // Azul Acero
+@color-acento: #2ca58d;     // Turquesa sutil para badges/botones
+@color-fondo: #f4f6f9;      // Fondo limpio de página
+@color-tarjeta: #ffffff;    // Fondo de bloques
+@fuente-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+@ancho-maximo: 1100px;
+
+// 2. MIXIN PARAMÉTRICO CON VALOR POR DEFECTO (Semana 6)
+.borde-estilizado(@radio: 6px; @grosor: 1px) {
+  border-radius: @radio;
+  border: @grosor solid lighten(@color-secundario, 35%);
+}
+
+// 3. REGLAS BASE Y RESET
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: @color-fondo;
+  font-family: @fuente-principal;
+  color: #333;
+  line-height: 1.4;
+  padding: 20px 0;
+}
+
+// 4. CONTENEDOR MAESTRO COMPACTO PARA UNA PÁGINA
+.cv-container {
+  max-width: @ancho-maximo;
+  margin: 0 auto;
+  background-color: @color-tarjeta;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  padding: 30px;
+  .borde-estilizado(10px, 0px);
+}
+
+// 5. ENCABEZADO CON FLEXBOX (Semana 2)
+.cv-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid @color-primario;
+  padding-bottom: 20px;
+  margin-bottom: 25px;
+
+  .header-info {
+    // Uso de anidamiento estricto LESS
+    max-width: (@ancho-maximo * 0.75); // Operación matemática Semana 6
+
+    h1 {
+      color: @color-primario;
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+    h2 {
+      color: @color-acento;
+      font-size: 15px;
+      font-weight: 600;
+      text-transform: uppercase;
+      margin: 4px 0 10px 0;
+    }
+    .perfil-extracto {
+      font-size: 13.5px;
+      color: #555;
+      text-align: justify;
+    }
+  }
+
+  .header-contacto {
+    .btn-contacto {
+      background-color: @color-primario;
+      color: white;
+      border: none;
+      padding: 10px 22px;
+      font-weight: 600;
+      .borde-estilizado(4px, 0px);
+      cursor: pointer;
+
+      // Estado dinámico utilizando funciones de LESS (Semana 6)
+      &:hover {
+        background-color: darken(@color-primario, 12%);
+      }
+    }
+  }
+}
+
+// 6. MAQUETACIÓN BIDIMENSIONAL CON CSS GRID (Semana 3)
+.cv-grid {
+  display: grid;
+  // Define 2 columnas: izquierda compacta (320px) y derecha flexible (1fr)
+  grid-template-columns: 300px 1fr;
+  gap: 30px;
+}
+
+// COLUMNA IZQUIERDA (Aside)
+.col-izquierda {
+  background-color: lighten(@color-fondo, 2%);
+  padding: 20px;
+  .borde-estilizado(8px);
+
+  .seccion-aside {
+    margin-bottom: 22px;
+
+    h3 {
+      color: @color-primario;
+      font-size: 16px;
+      border-bottom: 1.5px solid @color-secundario;
+      padding-bottom: 4px;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+
+    ul {
+      list-style: none;
+      li {
+        font-size: 12.5px;
+        margin-bottom: 6px;
+        color: #444;
+      }
+    }
+
+    .item-voluntariado {
+      h4 { font-size: 13px; color: #333; }
+      h5 { font-size: 12px; color: @color-secundario; }
+      p { font-size: 11.5px; color: #666; }
+    }
+  }
+}
+
+// COLUMNA DERECHA (Main Content)
+.col-derecha {
+  .seccion-main {
+    margin-bottom: 25px;
+
+    h3 {
+      color: @color-primario;
+      font-size: 18px;
+      border-bottom: 2px solid lighten(@color-secundario, 20%);
+      padding-bottom: 4px;
+      margin-bottom: 15px;
+    }
+
+    .item-proyecto {
+      margin-bottom: 15px;
+      h4 {
+        font-size: 14.5px;
+        color: @color-secundario;
+        font-weight: 600;
+      }
+      p {
+        font-size: 13px;
+        color: #555;
+        text-align: justify;
+        margin-top: 3px;
+      }
+    }
+
+    // SUBGRID INTERNO CON CSS GRID (Semana 3)
+    .certificaciones-subgrid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); // Dos columnas idénticas
+      gap: 15px;
+
+      .tarjeta-cert {
+        background-color: #fff;
+        padding: 12px;
+        // Invocación del mixin paramétrico de LESS
+        .borde-estilizado(6px);
+
+        h4 {
+          font-size: 13px;
+          color: @color-primario;
+        }
+        h5 {
+          font-size: 12px;
+          color: #777;
+        }
+        .vigencia {
+          font-size: 11px;
+          color: @color-acento;
+          margin-top: 2px;
+        }
+      }
+    }
+  }
+}
